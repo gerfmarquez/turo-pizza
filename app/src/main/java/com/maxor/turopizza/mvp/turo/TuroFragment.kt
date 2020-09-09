@@ -33,5 +33,4 @@ class TuroFragment  @Inject constructor(): DaggerFragment() {
         return layout
     }
 
-
 }

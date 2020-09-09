@@ -34,7 +34,12 @@ class BusinessesAdapter : ListAdapter<TuroBusinessData, BusinessesAdapter.Holder
         holder.rowLayout.tv_business_rating.text = getItem(position).rating.toString()
         val formatDistance = DecimalFormat().format(getItem(position).distance)
         holder.rowLayout.tv_distance.text = "Distance: $formatDistance"
-        Picasso.get().load(getItem(position).image_url).into(holder.rowLayout.iv_business_thumbnail)
+
+        val imageUrl = getItem(position).image_url
+        if(imageUrl.isNotEmpty()) {
+            Picasso.get().load(imageUrl).into(holder.rowLayout.iv_business_thumbnail)
+        }
+
     }
 
 }
