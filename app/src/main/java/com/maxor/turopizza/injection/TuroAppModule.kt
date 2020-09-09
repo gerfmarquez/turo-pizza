@@ -1,6 +1,6 @@
 package com.maxor.turopizza.injection
 
-import com.maxor.turopizza.mvp.TuroActivity
+import com.maxor.turopizza.mvp.turo.TuroActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

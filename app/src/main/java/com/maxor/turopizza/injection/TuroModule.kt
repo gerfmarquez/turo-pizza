@@ -1,7 +1,7 @@
 package com.maxor.turopizza.injection
 
-import com.maxor.turopizza.mvp.TuroMvpContract
-import com.maxor.turopizza.mvp.TuroPresenter
+import com.maxor.turopizza.mvp.turo.TuroMvpContract
+import com.maxor.turopizza.mvp.turo.TuroPresenter
 import com.maxor.turopizza.web.TuroService
 import dagger.Binds
 import dagger.Module
@@ -18,7 +18,7 @@ abstract class TuroModule {
     companion object {
         @Singleton
         @Provides
-        fun provideWeatherService(): TuroService {
+        fun provideTuroService(): TuroService {
             return TuroService.create()
         }
     }

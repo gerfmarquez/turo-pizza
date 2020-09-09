@@ -1,4 +1,4 @@
-package com.maxor.turopizza.mvp
+package com.maxor.turopizza.mvp.turo
 
 import com.maxor.turopizza.web.model.Businesses
 
@@ -9,7 +9,7 @@ interface TuroMvpContract {
     }
     interface Presenter {
         fun bindView(view: View)
-        fun fetchBusinesses(term: String, lat: Double, lon: Double)
+        fun fetchBusinesses(term: String)
         fun cleanup()
     }
 
