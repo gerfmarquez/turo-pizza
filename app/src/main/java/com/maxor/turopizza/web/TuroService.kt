@@ -14,12 +14,13 @@ interface TuroService {
 
     @GET("v3/businesses/search")
     fun searchBusinessNearby(
-        @Query("lat") lat: Double,
-        @Query("lon") lon: Double) : Single<TuroBaseResponse>
+        @Query("term") term: String,
+        @Query("latitude") lat: Double,
+        @Query("longitude") lon: Double) : Single<TuroBaseResponse>
 
 
     companion object  {
-        val apiKey: String = "2ROaa2Rh9qu3WVTCms8FoVE4mSfHQHC7QJua95-kKT-PqzIlLSrs4tmHVdtdFw_66-JNfRiJmb\n" +
+        val apiKey: String = "2ROaa2Rh9qu3WVTCms8FoVE4mSfHQHC7QJua95-kKT-PqzIlLSrs4tmHVdtdFw_66-JNfRiJmb" +
                 "CByHTvFNy5dQq-tpfS4FrPpupIzKlgELR3br-r5trpeFhrCRgwWnYx"
         val baseUrl: String = "https://api.yelp.com/"
         fun create(): TuroService {

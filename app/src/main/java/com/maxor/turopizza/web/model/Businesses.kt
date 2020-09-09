@@ -13,9 +13,9 @@ package com.maxor.turopizza.web.model
 
 data class Businesses (
 
-	val rating : Int,
+	val rating : Double,
 	val price : String,
-	val phone : Int,
+	val phone : String,
 	val id : String,
 	val alias : String,
 	val is_closed : Boolean,
