@@ -10,13 +10,14 @@ import com.maxor.turopizza.R
 import com.maxor.turopizza.data.TuroBusinessData
 import com.maxor.turopizza.views.BusinessesAdapter
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_turo_search_fragment.view.*
 import javax.inject.Inject
 import javax.inject.Scope
 import javax.inject.Singleton
 
 
-class TuroFragment  @Inject constructor(): DaggerFragment(), TuroMvpContract.View {
+class TuroFragment  @Inject constructor(): DaggerFragment() {
 
     var businessesAdapter: BusinessesAdapter? = null
 
@@ -32,11 +33,5 @@ class TuroFragment  @Inject constructor(): DaggerFragment(), TuroMvpContract.Vie
         return layout
     }
 
-    override fun showBusinesses(businesses: List<TuroBusinessData>) {
-        businessesAdapter?.submitList(businesses)
-    }
 
-    override fun showBusinessesFail() {
-
-    }
 }

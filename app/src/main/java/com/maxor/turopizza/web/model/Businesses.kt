@@ -11,23 +11,34 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 package com.maxor.turopizza.web.model
 
+import com.maxor.turopizza.data.TuroBusinessData
+
 data class Businesses (
 
-	val rating : Double = 0.0,
-	val price : String,
-	val phone : String,
-	val id : String,
-	val alias : String,
-	val is_closed : Boolean,
-	val categories : List<Categories>,
-	val review_count : Int = 0,
-	val name : String,
-	val url : String,
-	val coordinates : Coordinates,
-	val image_url : String,
-	val location : Location,
-	val distance : Double = 0.0,
-	val transactions : List<String>
+	var rating : Double = 0.0,
+	var price : String = "",
+	var phone : String = "",
+	var id : String = "",
+	var alias : String = "",
+	var is_closed : Boolean = false,
+	var categories : List<Categories> = mutableListOf(),
+	var review_count : Int = 0,
+	var name : String = "",
+	var url : String = "",
+	var coordinates : Coordinates = Coordinates(0.0,0.0),
+	var image_url : String = "",
+	var location : Location = Location("","","","","",""),
+	var distance : Double = 0.0,
+	var transactions : List<String> = mutableListOf()
 ) {
+	constructor(turoBusinessData: TuroBusinessData) : this() {
+		this.apply {
+			this.rating = turoBusinessData.rating
+			this.name = turoBusinessData.name
+			this.id = turoBusinessData.id
+			this.image_url = turoBusinessData.image_url
+			this.distance = turoBusinessData.distance
+		}
 
+	}
 }

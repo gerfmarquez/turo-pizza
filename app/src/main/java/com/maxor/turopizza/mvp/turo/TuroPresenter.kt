@@ -30,7 +30,7 @@ class TuroPresenter @Inject constructor(val turoService: TuroService, val locati
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe( { successData ->
                             var businessData = successData.businesses.map {
-                                TuroBusinessData(it.rating,"","",it.id,0,it.name,it.image_url,it.distance)
+                                TuroBusinessData(it.rating,it.id,it.name,it.image_url,it.distance)
                             }
                             businessData = businessData.sortedBy { it.distance }
                             turoView?.showBusinesses(businessData)

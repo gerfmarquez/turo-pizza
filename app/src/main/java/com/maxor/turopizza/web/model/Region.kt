@@ -13,5 +13,5 @@ package com.maxor.turopizza.web.model
 
 data class Region (
 
-	val center : Center
+	val center : Center = Center()
 )

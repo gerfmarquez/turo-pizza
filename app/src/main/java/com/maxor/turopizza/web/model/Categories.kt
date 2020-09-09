@@ -13,6 +13,6 @@ package com.maxor.turopizza.web.model
 
 data class Categories (
 
-	val alias : String,
-	val title : String
+	val alias : String = "",
+	val title : String = ""
 )
