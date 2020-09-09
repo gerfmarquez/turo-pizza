@@ -28,4 +28,6 @@ data class Businesses (
 	val location : Location,
 	val distance : Double = 0.0,
 	val transactions : List<String>
-)
+) {
+
+}

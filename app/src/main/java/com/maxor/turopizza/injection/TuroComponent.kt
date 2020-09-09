@@ -7,8 +7,8 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
-@Singleton
-@Component( modules = [AndroidInjectionModule::class, TuroAppModule::class])
+
+@Component( modules = [AndroidInjectionModule::class, TuroModule::class, TuroAppModule::class ])
 interface TuroComponent : AndroidInjector<TuroApp> {
 
     @Component.Builder

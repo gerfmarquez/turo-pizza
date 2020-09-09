@@ -5,6 +5,8 @@ import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
+import android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+import android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.maxor.turopizza.R
@@ -12,13 +14,13 @@ import com.maxor.turopizza.web.model.Businesses
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import javax.inject.Singleton
 
 class TuroActivity : DaggerAppCompatActivity() {
 
     @Inject
     lateinit var turoPresenter: TuroMvpContract.Presenter
 
-    @Inject
     lateinit var turoView: TuroMvpContract.View
 
 
@@ -26,7 +28,10 @@ class TuroActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        turoView = fragment_turo_businesses_results as TuroMvpContract.View
+
         turoPresenter.bindView(turoView)
+
     }
 
     fun searchTermBusinessesNearby(view : View) {

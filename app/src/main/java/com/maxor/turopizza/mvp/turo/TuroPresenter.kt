@@ -1,6 +1,7 @@
 package com.maxor.turopizza.mvp.turo
 
 import android.util.Log
+import com.maxor.turopizza.data.TuroBusinessData
 import com.maxor.turopizza.mvp.location.LocationProvider
 import com.maxor.turopizza.mvp.turo.TuroMvpContract
 import com.maxor.turopizza.web.TuroService
@@ -28,7 +29,11 @@ class TuroPresenter @Inject constructor(val turoService: TuroService, val locati
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe( { successData ->
-                            turoView?.showBusinesses(successData.businesses)
+                            var businessData = successData.businesses.map {
+                                TuroBusinessData(it.rating,"","",it.id,0,it.name,it.image_url,it.distance)
+                            }
+                            businessData = businessData.sortedBy { it.distance }
+                            turoView?.showBusinesses(businessData)
                         },
                         {
                             turoView?.showBusinessesFail()

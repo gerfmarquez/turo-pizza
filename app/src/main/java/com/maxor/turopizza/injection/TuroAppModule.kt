@@ -8,11 +8,12 @@ import dagger.BindsInstance
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
+import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Scope
 import javax.inject.Singleton
 
-@Module(includes = [TuroModule::class])
+@Module
 abstract class TuroAppModule {
-
 
     @ContributesAndroidInjector
     abstract fun  bindMainActivity() : TuroActivity
@@ -20,14 +21,7 @@ abstract class TuroAppModule {
     @ContributesAndroidInjector
     abstract fun bindTuroFragment() : TuroFragment
 
-    companion object {
-        @Singleton
-        @Provides
-        fun provideTuroService(turoapp: TuroApp): TuroService {
-            return TuroService.create()
-        }
 
-    }
 
 
 
