@@ -1,6 +1,6 @@
 package com.maxor.turopizza.web
 
-import TuroBaseResponse
+import com.maxor.turopizza.web.model.TuroBaseResponse
 import io.reactivex.Single
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -9,10 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+
 interface TuroService {
 
     @GET("v3/businesses/search")
-    fun fetchWeather(
+    fun fetch(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double) : Single<TuroBaseResponse>
 
