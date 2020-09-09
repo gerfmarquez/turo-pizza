@@ -10,7 +10,7 @@ class ParametersInterceptor: Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val oldRequest: Request = chain.request()
-        val oldUrl: HttpUrl = oldRequest.url()
+        val oldUrl: HttpUrl = oldRequest.url
 
         val newUrl = oldUrl.newBuilder()
             .build()

@@ -13,7 +13,7 @@ package com.maxor.turopizza.web.model
 
 data class TuroBaseResponse (
 
-	val total : Int,
+	val total : Int = 0,
 	val businesses : List<Businesses>,
 	val region : Region
 )

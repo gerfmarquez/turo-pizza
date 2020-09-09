@@ -3,6 +3,7 @@ package com.maxor.turopizza.web
 import com.maxor.turopizza.web.model.TuroBaseResponse
 import io.reactivex.Single
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,8 +26,12 @@ interface TuroService {
         val baseUrl: String = "https://api.yelp.com/"
         fun create(): TuroService {
 
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+
             val httpClient = OkHttpClient.Builder()
             httpClient.addInterceptor(ParametersInterceptor())
+            httpClient.addInterceptor(interceptor)
 
             return  Retrofit.Builder()
                 .baseUrl(baseUrl)

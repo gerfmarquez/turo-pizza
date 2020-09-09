@@ -18,6 +18,5 @@ data class Location (
 	val address2 : String,
 	val address3 : String,
 	val state : String,
-	val address1 : String,
-	val zip_code : Int
+	val address1 : String
 )
