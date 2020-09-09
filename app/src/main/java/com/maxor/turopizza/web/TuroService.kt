@@ -13,7 +13,7 @@ import retrofit2.http.Query
 interface TuroService {
 
     @GET("v3/businesses/search")
-    fun fetch(
+    fun searchBusinessNearby(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double) : Single<TuroBaseResponse>
 
