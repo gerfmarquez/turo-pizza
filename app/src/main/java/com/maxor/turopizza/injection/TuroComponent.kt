@@ -1,12 +1,10 @@
 package com.maxor.turopizza.injection
 
-import com.maxor.turopizza.MainActivity
 import com.maxor.turopizza.TuroApp
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
-import dagger.android.ContributesAndroidInjector
 import javax.inject.Singleton
 
 @Singleton

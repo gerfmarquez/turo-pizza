@@ -1,16 +1,26 @@
 package com.maxor.turopizza.injection
 
+import com.maxor.turopizza.mvp.TuroMvpContract
+import com.maxor.turopizza.mvp.TuroPresenter
 import com.maxor.turopizza.web.TuroService
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class TuroModule {
+abstract class TuroModule {
 
-    @Singleton
-    @Provides
-    fun provideWeatherService(): TuroService {
-        return TuroService.create()
+    @Binds
+    abstract fun bindsTuroPresenter(gamesPresenter: TuroPresenter)
+            : TuroMvpContract.Presenter
+
+    companion object {
+        @Singleton
+        @Provides
+        fun provideWeatherService(): TuroService {
+            return TuroService.create()
+        }
     }
+
 }
