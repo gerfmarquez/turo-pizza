@@ -18,18 +18,16 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Thread {
-            turoService.searchBusinessNearby("pizza",42.283730, -83.737003)
+        turoService.searchBusinessNearby("pizza",42.283730, -83.737003)
 
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe( { successData ->
-                    Log.d("","")
-                },
-                {
-                    Log.d("","")
-                }
-            )
-        }.start()
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe( { successData ->
+                Log.d("","")
+            },
+            {
+                Log.d("","")
+            }
+        )
     }
 }
