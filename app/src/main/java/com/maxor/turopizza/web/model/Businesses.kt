@@ -14,7 +14,6 @@ package com.maxor.turopizza.web.model
 import com.maxor.turopizza.data.TuroBusinessData
 
 data class Businesses (
-
 	var rating : Double = 0.0,
 	var price : String = "",
 	var phone : String = "",
@@ -30,15 +29,4 @@ data class Businesses (
 	var location : Location = Location("","","","","",""),
 	var distance : Double = 0.0,
 	var transactions : List<String> = mutableListOf()
-) {
-	constructor(turoBusinessData: TuroBusinessData) : this() {
-		this.apply {
-			this.rating = turoBusinessData.rating
-			this.name = turoBusinessData.name
-			this.id = turoBusinessData.id
-			this.image_url = turoBusinessData.image_url
-			this.distance = turoBusinessData.distance
-		}
-
-	}
-}
+)

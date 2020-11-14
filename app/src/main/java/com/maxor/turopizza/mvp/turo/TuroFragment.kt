@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.maxor.turopizza.R
 import com.maxor.turopizza.data.TuroBusinessData
 import com.maxor.turopizza.views.BusinessesAdapter
@@ -24,7 +25,7 @@ class TuroFragment  @Inject constructor(): DaggerFragment() {
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        val layout : LinearLayout = inflater.inflate(R.layout.view_turo_search_fragment,   container,  false) as LinearLayout
+        val layout : RecyclerView = inflater.inflate(R.layout.view_turo_search_fragment,   container,  false) as RecyclerView
 
         businessesAdapter = BusinessesAdapter()
 

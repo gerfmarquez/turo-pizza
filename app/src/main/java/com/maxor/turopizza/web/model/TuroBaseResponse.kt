@@ -11,25 +11,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 package com.maxor.turopizza.web.model
 
-import com.maxor.turopizza.data.TuroBusinessData
 
 data class TuroBaseResponse (
 
 	val total : Int = 0,
-	val businesses : List<Businesses> = mutableListOf(),
+	val businesses : MutableList<Businesses> = mutableListOf(),
 	val region : Region = Region()
-) {
-	constructor(businessData: List<TuroBusinessData>) :
-			this(0,
-				businessData.map {	data ->
-					val businesses = Businesses()
-					businesses.rating = data.rating
-					businesses.image_url = data.image_url
-					businesses.distance = data.distance
-					businesses.name = data.name
-					businesses.id = data.id
-
-					businesses
-				})
-
-}
+)

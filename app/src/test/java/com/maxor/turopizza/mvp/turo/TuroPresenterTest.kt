@@ -49,11 +49,17 @@ class TuroPresenterTest {
     fun testTuroPresenterFetchBusinesses() {
 
         val locationDataResponse = LocationData(1234,1.1,2.2)
+        val turoServiceResponse = TuroBaseResponse()
 
         val businessData =  TuroBusinessData(
             4.5,"qwer1234","Restaurant",
             "http://png.png/png.png",23.34)
-        val turoServiceResponse = TuroBaseResponse(0,listOf(Businesses(businessData)))
+        turoServiceResponse.businesses.add(
+                Businesses( rating = businessData.rating,
+                            name = businessData.name,
+                            id = businessData.id,
+                            image_url = businessData.image_url,
+                            distance = businessData.distance ))
 
         Mockito.`when`(locationProvider.getLocation()).thenReturn(Single.just(locationDataResponse))
 

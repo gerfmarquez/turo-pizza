@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.view.View.*
 import androidx.core.app.ActivityCompat
@@ -13,10 +14,12 @@ import com.maxor.turopizza.data.TuroBusinessData
 import com.maxor.turopizza.web.model.Businesses
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.StringBuilder
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
-class TuroActivity : DaggerAppCompatActivity(), TuroMvpContract.View{
+class TuroActivity : DaggerAppCompatActivity(), TuroMvpContract.View {
 
     @Inject
     lateinit var turoPresenter: TuroMvpContract.Presenter
