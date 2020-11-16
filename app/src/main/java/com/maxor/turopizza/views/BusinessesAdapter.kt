@@ -11,6 +11,12 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.rl_business_row.view.*
 import java.text.DecimalFormat
 
+/** This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ * Copyright 2020, Gerardo Marquez.
+ */
+
 class BusinessesAdapter : ListAdapter<TuroBusinessData, BusinessesAdapter.Holder>(
     diffCallback = object : DiffUtil.ItemCallback<TuroBusinessData>() {
         override fun areItemsTheSame(oldItem: TuroBusinessData, newItem: TuroBusinessData): Boolean {

@@ -11,6 +11,12 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
+/** This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ * Copyright 2020, Gerardo Marquez.
+ */
+
 class TuroPresenter @Inject constructor(val turoService: TuroService, val locationProvider: LocationProvider) : TuroMvpContract.Presenter {
 
     private val disposables : MutableList<Disposable> = mutableListOf()

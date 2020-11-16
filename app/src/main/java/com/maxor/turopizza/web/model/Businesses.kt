@@ -11,7 +11,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 package com.maxor.turopizza.web.model
 
-import com.maxor.turopizza.data.TuroBusinessData
+/** This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ * Copyright 2020, Gerardo Marquez.
+ */
 
 data class Businesses (
 	var rating : Double = 0.0,

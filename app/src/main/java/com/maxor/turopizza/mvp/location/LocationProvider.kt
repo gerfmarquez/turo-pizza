@@ -8,6 +8,12 @@ import io.reactivex.Single
 import kotlinx.android.parcel.Parcelize
 import javax.inject.Inject
 
+/** This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ * Copyright 2020, Gerardo Marquez.
+ */
+
 class  LocationProvider @Inject constructor(val turoApp: TuroApp){
 
     fun getLocation() : Single<LocationData> {
